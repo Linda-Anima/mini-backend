@@ -73,7 +73,7 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
 
-const Admin = User.discriminator('Admin', new mongoose.Schema({}));
 
 const User = mongoose.model('User', userSchema);
 export default User;
+const Admin = User.discriminator('Admin', new mongoose.Schema({}));
